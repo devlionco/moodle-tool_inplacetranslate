@@ -1,6 +1,7 @@
 # Tool In-Place Custom Translate #
 
-This tool easily helps to translate all strings on each page.
+This tool easily helps to translate all strings on each page. 
+Moodle Versions 4.1 +
 
 Install plugin as usual.
 
