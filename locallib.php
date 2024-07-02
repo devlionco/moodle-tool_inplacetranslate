@@ -62,7 +62,7 @@ function store_string_in_moodledata($component, $lang, $stringid, $customization
 
     $customlangdir = $CFG->dataroot . '/lang/' . $lang . '_local/';
     if (!file_exists($customlangdir)) {
-        mkdir($customlangdir, 0777, true);
+        mkdir($customlangdir, $CFG->directorypermissions, true);
     }
 
     $filepath = $customlangdir . $filename;
@@ -70,12 +70,12 @@ function store_string_in_moodledata($component, $lang, $stringid, $customization
         check_dir_exists(dirname($filepath));
     }
 
-    $strings = [];
     if (file_exists($filepath)) {
         include($filepath);
     }
 
-    $strings[$stringid] = $customization;
+    $string[$stringid] = $customization;
+    $strings = $string;
 
     if (!$f = fopen($filepath, 'w')) {
         throw new moodle_exception('Unable to write ' . s($filepath));
