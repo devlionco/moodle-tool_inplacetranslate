@@ -26,28 +26,6 @@ defined('MOODLE_INTERNAL') || die();
 
 // We defined the web service functions to install.
 $functions = [
-        'tool_inplacetranslate_translation_get_string' => [
-                'classname' => 'tool_inplacetranslate_external',
-                'methodname' => 'translation_get_string',
-                'classpath' => '',
-                'description' => 'Get string for translation',
-                'type' => 'read',
-                'ajax' => true,
-                'capabilities' => '',
-                'loginrequired' => true,
-                'services' => [MOODLE_OFFICIAL_MOBILE_SERVICE],
-        ],
-        'tool_inplacetranslate_translation_update_string' => [
-                'classname' => 'tool_inplacetranslate_external',
-                'methodname' => 'translation_update_string',
-                'classpath' => '',
-                'description' => 'Update translation',
-                'type' => 'write',
-                'ajax' => true,
-                'capabilities' => '',
-                'loginrequired' => true,
-                'services' => [MOODLE_OFFICIAL_MOBILE_SERVICE],
-        ],
         'tool_inplacetranslate_get_translated_string' => [
                 'classname' => 'tool_inplacetranslate_external',
                 'methodname' => 'get_translated_string',
@@ -69,20 +47,5 @@ $functions = [
                 'capabilities' => '',
                 'loginrequired' => true,
                 'services' => [MOODLE_OFFICIAL_MOBILE_SERVICE],
-        ],
-];
-
-// We define the services to install as pre-build services. A pre-build service is not editable by administrator.
-$services = [
-        'Tool inplacetranslate services' => [
-                'functions' => [
-                        'tool_inplacetranslate_translation_get_string',
-                        'tool_inplacetranslate_translation_update_string',
-                        'tool_inplacetranslate_get_translated_string',
-                        'tool_inplacetranslate_set_translated_string',
-
-                ],
-                'enabled' => 1,
-                'shortname' => 'tool_inplacetranslate',
         ],
 ];

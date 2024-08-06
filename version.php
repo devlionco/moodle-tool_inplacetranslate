@@ -26,5 +26,5 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'tool_inplacetranslate';
 $plugin->release = '1.0';
-$plugin->version = 2024062001;
+$plugin->version = 2024080600;
 $plugin->requires = 2020061500;
